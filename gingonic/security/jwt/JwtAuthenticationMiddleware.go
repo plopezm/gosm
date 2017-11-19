@@ -12,8 +12,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-//Middleware to add JWT security to gin-gonic resources
-func Middleware(ptr gin.HandlerFunc, privateKey *rsa.PrivateKey, publicKey *rsa.PublicKey) gin.HandlerFunc {
+//BearerAuthMiddleware to add JWT security to gin-gonic resources
+func BearerAuthMiddleware(ptr gin.HandlerFunc, privateKey *rsa.PrivateKey, publicKey *rsa.PublicKey) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		//setCORSEnabled(c)
 
