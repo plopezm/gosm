@@ -1,4 +1,4 @@
-package basic
+package security
 
 import (
 	"encoding/base64"
@@ -11,11 +11,9 @@ import (
 // ValidateUserCallback is used to validate a user sent by http basic authentication header
 type ValidateUserCallback func(c *gin.Context, user string, passwd string) bool
 
-// AuthMiddleware enables Basic authentication security to a gin.HandlerFunc
-func AuthMiddleware(ptr gin.HandlerFunc, validateUser ValidateUserCallback) gin.HandlerFunc {
+// BasicAuthMiddleware enables Basic authentication security to a gin.HandlerFunc
+func BasicAuthMiddleware(ptr gin.HandlerFunc, validateUser ValidateUserCallback) gin.HandlerFunc {
 	return func(c *gin.Context) {
-		//setCORSEnabled(c)
-
 		auth := strings.SplitN(c.GetHeader("Authorization"), " ", 2)
 		if len(auth) != 2 || auth[0] != "Basic" {
 			c.Status(http.StatusUnauthorized)

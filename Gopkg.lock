@@ -35,13 +35,13 @@
   branch = "master"
   name = "github.com/ugorji/go"
   packages = ["codec"]
-  revision = "50329c0f550792d7ec08500e25948b4de2560f68"
+  revision = "84cb69a8af8316eed8cf4a3c9368a56977850062"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "0ac51a24ef1c37380f98ba8b98f56e3bffd59850"
+  revision = "4ff8c001ce4cc464e644b922325097228fce14d8"
 
 [[projects]]
   name = "gopkg.in/go-playground/validator.v8"
