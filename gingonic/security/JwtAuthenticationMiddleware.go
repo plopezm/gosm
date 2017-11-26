@@ -57,8 +57,8 @@ func sendUnauthorized(c *gin.Context, err error) {
 }
 
 func getTokenRemainingValidity(timestamp interface{}) int {
-	if validity, ok := timestamp.(int64); ok {
-		tm := time.Unix(validity, 0)
+	if validity, ok := timestamp.(float64); ok {
+		tm := time.Unix(int64(validity), 0)
 		remainer := tm.Sub(time.Now())
 		if remainer > 0 {
 			return int(remainer.Seconds())
